@@ -1,11 +1,11 @@
-Overview
+# Overview
 
 The project focusses on movie data mining with a primary objctive of deriving interesting trends from a collection of movie ratings by users. The analysis aims to uncover at least four noteworthy patterns within the data. Few of the examples are exploring the k most popular movies for a particular age group, identifying the top k movies with the most ratings, which could be considered the most popular, but intrestingly have the lowest ratings and so on.
 The datasets utilized for this project are sourced from GroupLens Research, which has gathered and provided rating datasets from the MovieLens website. Specifically, the MovieLens 1M dataset consists of 1 million ratings contributed by 6000 users for 4000 movies.  A few trends were also explored on the 25M dataset to check scalability.
 
 The dataset serves as the foundation for extracting meaningful insights into the preferences and trends related to movie ratings. For this work, we run Spark locally on our VM as well as on cluster. Spark sessions are appropriately configured and python scripts are run for implementing our program using PySpark SQL and DataFrame operations.
 
-Reflection
+# Reflection
 
 This project of movie data mining using PySpark SQL was a valuable learning experience. The challenges encountered helped us to get a better understanding of the intricacies involved in large-scale data analysis. What worked well was the easy data availability and a clear problem statement. Accessing the MovieLens dataset from GroupLens Research was straightforward, providing a rich source for movie ratings. The project's problem statement was well-defined, outlining the objective of deriving interesting trends from the movie rating dataset. This clarity facilitated a focused approach.
 Spark SQL was particularly useful for this project due to its capabilities in processing and analyzing large-scale structured data using Spark. It allowed us to express complex data manipulations and analyses using SQL-like queries. Because of our familiarity with SQL syntax it became easier to formulate queries to extract specific information from the dataset.
@@ -19,11 +19,11 @@ o	To run 1M data on a Spark cluster that is up and running along with a Hadoop c
 - spark-submit --master spark://cscluster00.boisestate.edu:7077 P3_1M_DataAnalysis.py hdfs://cscluster00.boisestate.edu:9000/user/ashitachandnani/movies/ml-1m/movies.dat hdfs://cscluster00.boisestate.edu:9000/user/ashitachandnani/movies/ml-1m/ratings.dat hdfs://cscluster00.boisestate.edu:9000/user/ashitachandnani/movies/ml-1m/users.dat hdfs://cscluster00.boisestate.edu:9000/user/ashitachandnani/ml-1m-output 2> /dev/null
 - hdfs dfs -get ml-1m-output
 
-Results
+# Results
 
 The Movie Data Mining uncovered the following interesting trends
 
-•	What are the k most popular movies of all time?
+** •	What are the k most popular movies of all time?** 
 
 This global popularity analysis provides insights into the overall popularity of movies across all genres and years. It
 identifies movies that have received the highest number of ratings and highest average ratings indicating a broad appeal among users.
