@@ -108,7 +108,7 @@ Some other trends we tried to find on 1M datasets:
 This information is useful to gain insights into whether there are variations in genre preferences between different genders.
 It also allows quantifying the differences in user engagement between male and female users for each genre.
 
-# Some trends on 25M dataset include : 
+Some trends on **25M dataset** include : 
 
 **•	Finding the most common tags**
 
