@@ -1,17 +1,17 @@
 # Overview
 
-The project focusses on movie data mining with a primary objctive of deriving interesting trends from a collection of movie ratings by users. The analysis aims to uncover at least four noteworthy patterns within the data. Few of the examples are exploring the k most popular movies for a particular age group, identifying the top k movies with the most ratings, which could be considered the most popular, but intrestingly have the lowest ratings and so on.
+The project focusses on movie data mining with a primary objective of deriving interesting trends from a collection of movie ratings by users. The analysis aims to uncover at least four noteworthy patterns within the data. Few of the examples are exploring the k most popular movies for a particular age group, identifying the top k movies with the most ratings, which could be considered the most popular, but interestingly have the lowest ratings and so on.
 The datasets utilized for this project are sourced from GroupLens Research, which has gathered and provided rating datasets from the MovieLens website. Specifically, the MovieLens 1M dataset consists of 1 million ratings contributed by 6000 users for 4000 movies.  A few trends were also explored on the 25M dataset to check scalability.
 
-The dataset serves as the foundation for extracting meaningful insights into the preferences and trends related to movie ratings. For this work, we run Spark locally on our VM as well as on cluster. Spark sessions are appropriately configured and python scripts are run for implementing our program using PySpark SQL and DataFrame operations.
+The dataset serves as the foundation for extracting meaningful insights into the preferences and trends related to movie ratings. For this work, I ran Spark locally on a VM as well as on the cluster. Spark sessions are appropriately configured and Python scripts implement the program using PySpark SQL and DataFrame operations.
 
 # Reflection
 
-This project of movie data mining using PySpark SQL was a valuable learning experience. The challenges encountered helped us to get a better understanding of the intricacies involved in large-scale data analysis. What worked well was the easy data availability and a clear problem statement. Accessing the MovieLens dataset from GroupLens Research was straightforward, providing a rich source for movie ratings. The project's problem statement was well-defined, outlining the objective of deriving interesting trends from the movie rating dataset. This clarity facilitated a focused approach.
-Spark SQL was particularly useful for this project due to its capabilities in processing and analyzing large-scale structured data using Spark. It allowed us to express complex data manipulations and analyses using SQL-like queries. Because of our familiarity with SQL syntax it became easier to formulate queries to extract specific information from the dataset.
+This project of movie data mining using PySpark SQL was a valuable learning experience. The challenges encountered helped me get a better understanding of the intricacies involved in large-scale data analysis. What worked well was the easy data availability and a clear problem statement. Accessing the MovieLens dataset from GroupLens Research was straightforward, providing a rich source for movie ratings. The project's problem statement was well-defined, outlining the objective of deriving interesting trends from the movie rating dataset. This clarity facilitated a focused approach.
+Spark SQL was particularly useful for this project due to its capabilities in processing and analyzing large-scale structured data using Spark. It allowed me to express complex data manipulations and analyses using SQL-like queries. Because of my familiarity with SQL syntax, it became easier to formulate queries to extract specific information from the dataset.
 
-There was an intial learning curve on understanding and adapting to the structure of the dataset. However, it also contributed to a deeper understanding of the data. Some challenges were faced in the process of rebasing in Git during the projects's development. Addressing conflicts and ensuring a smooth rebase had an initial learning curve as well. During the Git rebase process, resolving conflicts in the version history took some time. This highlighted the importance of clear communication within the development team.
-In conclusion, Spark SQL streamlined the data analysis process. The project presented a range of interesting analysis opportunities, from identifying popular movies across different dimensions to exploring trends related to ratings and seasons. It prrovided valuable insights into effective data analysis and collaborative development.
+There was an initial learning curve on understanding and adapting to the structure of the dataset. However, it also contributed to a deeper understanding of the data. Rebasing in Git during development was another learning curve: resolving conflicts in the version history took some time and reinforced the value of a clean, well-organized commit history.
+In conclusion, Spark SQL streamlined the data analysis process. The project presented a range of interesting analysis opportunities, from identifying popular movies across different dimensions to exploring trends related to ratings and seasons. It provided valuable insights into effective data analysis at scale.
 
 o	To run 1M data on a Spark cluster that is up and running along with a Hadoop cluster, use:
 
@@ -54,17 +54,17 @@ The combination of high rating counts and lower average ratings may indicate tha
 universally well-received.
 Understanding user engagement with such movies can be crucial for content platforms to refine their recommendation
 algorithms and content curation strategies.
-It present an opportunity for content platforms to analyze user feedback and identify areas for improvement.
-It may also be useful in balancing content recommrndations. While some users may enjoy popular blockbusters, others may
+It presents an opportunity for content platforms to analyze user feedback and identify areas for improvement.
+It may also be useful in balancing content recommendations. While some users may enjoy popular blockbusters, others may
 prefer movies with niche appeal or unconventional storytelling.
 
 **•	What are the top k movies for a specific season (1: Winter, 2: Spring, 3: Summer, 4: Fall)?**
 
 This SQL query finds the top k movies for a specified season. Understanding seasonal viewing patterns can be used for seasonal content recommendation.
 
-Some other trends we tried to find on 1M datasets:
+Other trends explored on the 1M dataset:
 
-**•	What is the average rating recieved for each genre?**
+**•	What is the average rating received for each genre?**
   
   This query calculates the average rating for each genre by aggregating the ratings of movies within each genre.
   
@@ -92,7 +92,7 @@ Some other trends we tried to find on 1M datasets:
   The above query calculates the average rating, rating count, and ranking for each movie by genre. It uses the RANK() 
   window function to rank movies within each genre based on the average rating and count of ratings.
   
-  This information can be useful top recommend top rated movies in each genre to users who show an interest in a 
+  This information can be useful to recommend top rated movies in each genre to users who show an interest in a 
   specific genre.
 
 **•	Which genres are preferred by people with different occupational groups?**
@@ -103,7 +103,7 @@ Some other trends we tried to find on 1M datasets:
   This information can be used to provide personalized content suggestions, user engagement and marketing strategies 
   for users in specific professions and improve overall user experience in diverse occupational groups.
   
-**•	Is there a genre preference base on gender?**
+**•	Is there a genre preference based on gender?**
 
 This information is useful to gain insights into whether there are variations in genre preferences between different genders.
 It also allows quantifying the differences in user engagement between male and female users for each genre.
@@ -123,9 +123,9 @@ This understanding of popular tags for a movie can help platforms suggest other 
 This analysis helps identify the most popular tags for each year by ranking them based on the number of occurrences. This information can be useful for content platform to understand user preferences and observing how tag popularity evolves over time.
 Identifying tags that are becoming more popular in recent years can be indicative of emerging trends or topics.
 
-The correctness of the reuslts was verified by first performing data analysis on a small subset of the 1M dataset comprising of 32373 ratings, 500 tags from 5000 users on 100 movies in Excel.
+The correctness of the results was verified by first performing the analysis on a small subset of the 1M dataset comprising 32373 ratings, 500 tags from 5000 users on 100 movies in Excel.
 
-After that the same analyses were done on the above smaller dataset both on our VM and cscluster and the results matched.
+The same analyses were then run on this smaller dataset on both the VM and the cluster, and the results matched.
 
 Finally the scripts were run on the much bigger 1M dataset on the cscluster.
 
@@ -145,11 +145,11 @@ Couldn't finish running the big dataset on VM due to a much smaller RAM on the s
 
 •	VM Performance:
 
-On our VM, the timing analysis shows an increase in execution time when transitioning from the smaller dataset to the much larger dataset. This is expected as processing a larger volume of data typically requires more computational resources and time.
+On the VM, the timing analysis shows an increase in execution time when transitioning from the smaller dataset to the much larger dataset. This is expected as processing a larger volume of data typically requires more computational resources and time.
 
 •	Cscluster Performance:
 
-On the cscluster, there is only a slight increase in execution time when moving from the smaller to the larger datasets. The 25M dataset processing time was improved by using caching. This demostrates the scalability of Spark SQL and is indicative of the distributed and parallel processing capabilities of Spark SQL on a cluster.
+On the cscluster, there is only a slight increase in execution time when moving from the smaller to the larger datasets. The 25M dataset processing time was improved by using caching. This demonstrates the scalability of Spark SQL and is indicative of the distributed and parallel processing capabilities of Spark SQL on a cluster.
 In summary, the speed-up from going from a small to a large dataset using Spark SQL is evident, especially in a distributed environment like the cscluster. The cscluster's performance is indicative of Spark SQL's scalability, making it well-suited for big data processing where parallelization and distributed computing can significantly improve execution times.
 
 
